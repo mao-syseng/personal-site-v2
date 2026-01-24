@@ -4,7 +4,7 @@ import TCell from "./TCell";
 
 export default function T({ s }: { s: S }) {
   return (
-    <div className="container-fluid">
+    <div className="container-fluid" style={{ padding: 0 }}>
       <table className="striped" style={{ tableLayout: "fixed" }}>
         <thead>
           <tr>
