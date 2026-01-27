@@ -40,7 +40,7 @@ export function App() {
       <div className="grid">
         <article>
           <header>
-            ternary totalistic elementary cellular automata - 2025
+            ternary totalistic cellular automata - 2025
           </header>
           a statically generated cellular automata rendered with only HTML. Made
           with <a href="https://www.11ty.dev/">eleventy</a>
@@ -53,6 +53,12 @@ export function App() {
           learning jtye/k. Includes examples and ref card.
           <footer>
             <a href="https://mao-syseng.github.io/k-playground/">visit</a>
+          </footer>
+        </article>
+        <article>
+          <header>printable maze generator - 2025</header>generate random mazes/labryinths for printing on paper, can customize size.
+          <footer>
+            <a href="https://mao-syseng.github.io/maze/">visit</a>
           </footer>
         </article>
       </div>
