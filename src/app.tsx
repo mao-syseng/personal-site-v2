@@ -1,47 +1,61 @@
-import { useEffect, useReducer } from "preact/hooks";
-import T from "./T";
-import { getKeyAction } from "./helpers";
-import { def, reducer } from "./reducer";
+import { useState } from "preact/hooks";
+import { Game } from "./magicPico/game";
 
 export function App() {
-  const [s, d] = useReducer(reducer, def);
-
-  useEffect(() => {
-    const id = setInterval(() => d({ type: "tick" }), 250);
-    return () => clearInterval(id);
-  }, []);
-
-  useEffect(() => {
-    const h = (e: KeyboardEvent) => {
-      const a = getKeyAction(e.key);
-      if (a) {
-        e.preventDefault();
-        d({ type: a });
-      }
-    };
-    window.addEventListener("keydown", h);
-    return () => window.removeEventListener("keydown", h);
-  }, []);
+  const [v, setV] = useState(0);
+  if (v === 1) return <Game />;
 
   return (
     <>
-    <header class="container">
-      <hgroup>
-        <h1>magic pico</h1>
-        <p>demake of magic garden</p>
-      </hgroup>
-    </header>
-    <section>
+      <div className="grid">
+        <article>
+          <header>magic pico - 2026</header>a magic garden demake, using{" "}
+          <a href="https://picocss.com">pico</a> styling and a single <a href="https://react.dev/reference/react/useReducer">reducer</a> for game logic.
+          <footer>
+            <a href="#" onClick={() => setV(1)}>
+              visit
+            </a>
+          </footer>
+        </article>
 
-      <T s={s} />
-      <div role="group">
-        <button onClick={() => d({ type: "turn_left" })}>←</button>
-        <button className="secondary" onClick={() => d({ type: "spin" })}>
-          ↻
-        </button>
-        <button onClick={() => d({ type: "turn_right" })}>→</button>
+        <article>
+          <header>rule 30 in k - 2026</header>rule 30 elementary cellular
+          automata in 4 lines of{" "}
+          <a href="https://ktye.github.io/jtye/index.html">jtye/k</a>
+          <footer>
+            <a href="https://mao-syseng.github.io/k-rule-30-elementary-cellular-automata/">
+              visit
+            </a>
+          </footer>
+        </article>
+        <article>
+          <header>langtons ant in 4 lines of k - 2026</header>
+          langtons ant in 4 lines of{" "}
+          <a href="https://ktye.github.io/jtye/index.html">jtye/k</a>
+          <footer>
+            <a href="https://mao-syseng.github.io/k-langtons-ant/">visit</a>
+          </footer>
+        </article>
       </div>
-    </section>
+      <div className="grid">
+        <article>
+          <header>
+            ternary totalistic elementary cellular automata - 2025
+          </header>
+          a statically generated cellular automata rendered with only HTML. Made
+          with <a href="https://www.11ty.dev/">eleventy</a>
+          <footer>
+            <a href="https://ternary-totalistic-ca-hub.netlify.app/">visit</a>
+          </footer>
+        </article>
+        <article>
+          <header>k playground - 2025</header>a playground for experimenting and
+          learning jtye/k. Includes examples and ref card.
+          <footer>
+            <a href="https://mao-syseng.github.io/k-playground/">visit</a>
+          </footer>
+        </article>
+      </div>
     </>
   );
 }

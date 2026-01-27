@@ -34,13 +34,6 @@ export const dropZone2: Pos[] = [
 export const step = (p: Pos, d: Dir): Pos =>
   [+p[0] + [0, 1, 0, -1][d], +p[1] + [-1, 0, 1, 0][d]] as Pos;
 
-export const m: Record<string, number> = {
-  ArrowUp: 0,
-  ArrowRight: 1,
-  ArrowDown: 2,
-  ArrowLeft: 3,
-};
-
 export const getKeyAction = (key: string): "turn_right" | "turn_left" | null => {
   if (key === "ArrowRight") return "turn_right";
   if (key === "ArrowLeft") return "turn_left";
