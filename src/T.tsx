@@ -6,20 +6,9 @@ export default function T({ s }: { s: S }) {
   return (
     <div className="container-fluid" style={{ padding: 0 }}>
       <table className="striped" style={{ tableLayout: "fixed" }}>
-        <thead>
-          <tr>
-            <th scope="col">↘</th>
-            {cols.map((x) => (
-              <th key={x} scope="col">
-                {x}
-              </th>
-            ))}
-          </tr>
-        </thead>
         <tbody>
           {rows.map((x) => (
             <tr key={x}>
-              <th scope="row">{x}</th>
               {cols.map((y) => (
                 <TCell
                   key={`${x}-${y}`}

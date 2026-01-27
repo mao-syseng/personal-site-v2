@@ -1,29 +1,22 @@
-import { useEffect, useReducer, useState } from "preact/hooks";
+import { useEffect, useReducer } from "preact/hooks";
 import T from "./T";
 import { getKeyAction } from "./helpers";
-import { def, reducer, type A } from "./reducer";
+import { def, reducer } from "./reducer";
 
 export function App() {
   const [s, d] = useReducer(reducer, def);
-  const [tickReset, setTickReset] = useState(0);
 
   useEffect(() => {
-    const id = setInterval(() => d({ type: "tick" }), 400);
+    const id = setInterval(() => d({ type: "tick" }), 250);
     return () => clearInterval(id);
-  }, [tickReset]);
-
-  const withTick = (action: A) => {
-    d(action);
-    d({ type: "tick" });
-    setTickReset((n) => n + 1);
-  };
+  }, []);
 
   useEffect(() => {
     const h = (e: KeyboardEvent) => {
-      const action = getKeyAction(e.key);
-      if (action) {
+      const a = getKeyAction(e.key);
+      if (a) {
         e.preventDefault();
-        withTick({ type: action });
+        d({ type: a });
       }
     };
     window.addEventListener("keydown", h);
@@ -32,7 +25,23 @@ export function App() {
 
   return (
     <>
+    <header class="container">
+      <hgroup>
+        <h1>magic pico</h1>
+        <p>demake of magic garden</p>
+      </hgroup>
+    </header>
+    <section>
+
       <T s={s} />
+      <div role="group">
+        <button onClick={() => d({ type: "turn_left" })}>←</button>
+        <button className="secondary" onClick={() => d({ type: "spin" })}>
+          ↻
+        </button>
+        <button onClick={() => d({ type: "turn_right" })}>→</button>
+      </div>
+    </section>
     </>
   );
 }

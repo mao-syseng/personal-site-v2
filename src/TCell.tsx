@@ -8,6 +8,9 @@ export default function TCell({ isPlayer, isTrail, isOppie, isDropZone }: P) {
   if (isPlayer) {
     return <td>@</td>;
   }
+  if (isDropZone && isTrail) {
+    return <td>⧆</td>;
+  }
   if (isTrail) {
     return <td>o</td>;
   }
@@ -15,7 +18,7 @@ export default function TCell({ isPlayer, isTrail, isOppie, isDropZone }: P) {
     return <td>x</td>;
   }
   if (isDropZone) {
-    return <td>*</td>;
+    return <td>□</td>;
   }
   return <td></td>;
 }
