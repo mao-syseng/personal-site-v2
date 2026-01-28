@@ -28,11 +28,11 @@ export function Game() {
       <section>
         <T s={s} />
         <div role="group">
-          <button onClick={() => d({ type: "turn_left" })}>←</button>
-          <button className="secondary" onClick={() => d({ type: "spin" })}>
-            ↻
+          <button className='outline' onClick={() => d({ type: "turn_left" })}>&lt;</button>
+          <button className="outline contrast" onClick={() => d({ type: "spin" })}>
+            #
           </button>
-          <button onClick={() => d({ type: "turn_right" })}>→</button>
+          <button className='outline' onClick={() => d({ type: "turn_right" })}>&gt;</button>
         </div>
       </section>
     </>
