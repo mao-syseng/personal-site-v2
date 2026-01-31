@@ -11,18 +11,6 @@ export function Game() {
     return () => clearInterval(id);
   }, []);
 
-  useEffect(() => {
-    const h = (e: KeyboardEvent) => {
-      const a = getKeyAction(e.key);
-      if (a) {
-        e.preventDefault();
-        d({ type: a });
-      }
-    };
-    window.addEventListener("keydown", h);
-    return () => window.removeEventListener("keydown", h);
-  }, []);
-
   return (
     <>
       <section>
@@ -30,12 +18,13 @@ export function Game() {
         <input
           type="text"
           onInput={(e) => {
-            const key = (e.target as HTMLInputElement).value.slice(-1);
+            const input = e.target as HTMLInputElement;
+            const key = input.value.slice(-1);
             const action = getKeyAction(key);
             if (action) {
               d({ type: action });
+              input.value = key;
             }
-            (e.target as HTMLInputElement).value = "";
           }}
         />
       </section>

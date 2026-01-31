@@ -1,4 +1,4 @@
-import { dropZone1, mx, my, randPos, step } from "./helpers";
+import { dropZone1, maxG, randPos, step } from "./helpers";
 
 export type Pos = [number, number];
 export type Dir = 0 | 1 | 2 | 3;
@@ -50,10 +50,10 @@ export function reducer(s: S, a: A): S {
       };
     case "tick": {
       let [nx, ny] = step(s.pos, s.dir);
-      if (nx < 0) nx = mx;
-      if (nx > mx) nx = 0;
-      if (ny < 0) ny = my;
-      if (ny > my) ny = 0;
+      if (nx < 0) nx = maxG;
+      if (nx > maxG) nx = 0;
+      if (ny < 0) ny = maxG;
+      if (ny > maxG) ny = 0;
       const oppieCollided = s.oppies.find(([ox, oy]) => ox === nx && oy === ny);
       const trailLength = oppieCollided ? s.trail.length + 1 : s.trail.length;
       let newOppies = s.oppies.filter(([ox, oy]) => !(ox === nx && oy === ny));

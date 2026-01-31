@@ -1,4 +1,4 @@
-import { cols, rows } from "./helpers";
+import { gs } from "./helpers";
 import type { S } from "./reducer";
 import TCell from "./TCell";
 
@@ -7,9 +7,9 @@ export default function T({ s }: { s: S }) {
     <div className="container-fluid" style={{ padding: 0 }}>
       <table style={{ tableLayout: "fixed" }}>
         <tbody>
-          {rows.map((x) => (
+          {gs.map((x) => (
             <tr key={x}>
-              {cols.map((y) => (
+              {gs.map((y) => (
                 <TCell
                   key={`${x}-${y}`}
                   isPlayer={s.pos[0] === y && s.pos[1] === x}

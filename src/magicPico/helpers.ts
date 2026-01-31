@@ -1,10 +1,7 @@
 import type { Dir, Pos } from "./reducer";
 
-export const cols: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-export const rows: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-export const mx = cols.length - 1; // Max x index
-export const my = rows.length - 1; // Max y index
+export const gs: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+export const maxG = gs.length - 1; // Max y index
 
 export const dropZone1: Pos[] = [
   [9, 0],
@@ -34,13 +31,15 @@ export const dropZone2: Pos[] = [
 export const step = (p: Pos, d: Dir): Pos =>
   [+p[0] + [0, 1, 0, -1][d], +p[1] + [-1, 0, 1, 0][d]] as Pos;
 
-export const getKeyAction = (key: string): "turn_right" | "turn_left" | null => {
-  const lower = key.toLowerCase();
-  if ("qweasdzxc".includes(lower)) return "turn_left";
-  if ("opklnm".includes(lower)) return "turn_right";
+export const getKeyAction = (
+  key: string,
+): "turn_right" | "turn_left" | null => {
+  const k = key.toLowerCase();
+  if ("qweasdzxc".includes(k)) return "turn_left";
+  if ("pæøålmokijn".includes(k)) return "turn_right";
   return null;
-}
+};
 export const randPos = (): Pos => [
-  Math.floor(Math.random() * (mx + 1)),
-  Math.floor(Math.random() * (my + 1)),
+  Math.floor(Math.random() * (maxG + 1)),
+  Math.floor(Math.random() * (maxG + 1)),
 ];
