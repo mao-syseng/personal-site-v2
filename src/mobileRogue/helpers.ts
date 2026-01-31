@@ -5,10 +5,10 @@ export const maxG = gs.length - 1; // Max grid index
 
 export const getKeyAction = (key: string): Dir | null => {
   const k = key.toLowerCase();
-  if ("qweasdzxc".includes(k)) return "left";
-  if ("pæøålmokijn".includes(k)) return "right";
-  if ("tyghvb".includes(k)) return "up";
-  if ("rfcnuj".includes(k)) return "down";
+  if ("qweasdzx".includes(k)) return "left";
+  if ("pæøålmokn".includes(k)) return "right";
+  if ("tyghvbij".includes(k)) return "up";
+  if ("rfcnujc".includes(k)) return "down";
   return null;
 };
 

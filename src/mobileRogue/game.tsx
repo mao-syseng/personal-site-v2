@@ -10,16 +10,14 @@ export function MobileRogue() {
       <section>
         <T s={s} />
         <input
-          type="text"
+          type="tel"
           name="controls"
           onInput={(e) => {
             const input = e.target as HTMLInputElement;
             const key = input.value.slice(-1);
             input.value = key;
             const dir = getKeyAction(key);
-            if (dir) {
-              d({ type: "move", dir });
-            }
+            if (dir) d({ type: "move", dir });
           }}
         />
       </section>
