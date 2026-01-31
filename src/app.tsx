@@ -1,10 +1,11 @@
 import { useState } from "preact/hooks";
 import { Game as MagicPico } from "./magicPico/game";
 import Doodles from "./Doodles";
+import { MobileRogue } from "./mobileRogue/game";
 
 export function App() {
   const [v, setV] = useState(0);
-  const showHeaderFooter = ![1].includes(v);
+  const showHeaderFooter = ![1, 2].includes(v);
 
   return (
     <>
@@ -19,6 +20,7 @@ export function App() {
       <main>
         {v === 0 && <Doodles setV={setV} />}
         {v === 1 && <MagicPico />}
+        {v === 2 && <MobileRogue />}
       </main>
       {showHeaderFooter && (
         <footer>
