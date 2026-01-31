@@ -27,13 +27,17 @@ export function Game() {
     <>
       <section>
         <T s={s} />
-        <div role="group">
-          <button className='outline' onClick={() => d({ type: "turn_left" })}>&lt;</button>
-          <button className="outline contrast" onClick={() => d({ type: "spin" })}>
-            #
-          </button>
-          <button className='outline' onClick={() => d({ type: "turn_right" })}>&gt;</button>
-        </div>
+        <input
+          type="text"
+          onInput={(e) => {
+            const key = (e.target as HTMLInputElement).value.slice(-1);
+            const action = getKeyAction(key);
+            if (action) {
+              d({ type: action });
+            }
+            (e.target as HTMLInputElement).value = "";
+          }}
+        />
       </section>
     </>
   );

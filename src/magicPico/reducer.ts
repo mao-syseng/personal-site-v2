@@ -17,7 +17,6 @@ export interface S {
 export type A =
   | { type: "set_p"; p: number }
   | { type: "set_dir"; dir: Dir }
-  | { type: "spin" }
   | { type: "turn_left" }
   | { type: "turn_right" }
   | { type: "tick" };

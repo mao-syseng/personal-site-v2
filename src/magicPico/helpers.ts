@@ -35,8 +35,9 @@ export const step = (p: Pos, d: Dir): Pos =>
   [+p[0] + [0, 1, 0, -1][d], +p[1] + [-1, 0, 1, 0][d]] as Pos;
 
 export const getKeyAction = (key: string): "turn_right" | "turn_left" | null => {
-  if (key === "ArrowRight") return "turn_right";
-  if (key === "ArrowLeft") return "turn_left";
+  const lower = key.toLowerCase();
+  if ("qweasdzxc".includes(lower)) return "turn_left";
+  if ("opklnm".includes(lower)) return "turn_right";
   return null;
 }
 export const randPos = (): Pos => [
