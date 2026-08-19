@@ -1,4 +1,4 @@
-export default function Doodles({ setV }: { setV: (v: number) => void }) {
+export default function Doodles() {
   return (
     <>
       <div className="grid">
