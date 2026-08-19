@@ -9,7 +9,7 @@ export function App() {
         <header>
           <hgroup>
             <h1>marc obel</h1>
-            <p>my digital doodles</p>
+            <p>my digital doodles and other weird projects</p>
           </hgroup>
         </header>
       )}
