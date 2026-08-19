@@ -3,25 +3,18 @@ export default function Doodles({ setV }: { setV: (v: number) => void }) {
     <>
       <div className="grid">
         <article>
-          <header data-tooltip="2026">roguelike</header>roguelike,
-          using <a href="https://picocss.com">pico</a> styling and a single{" "}
-          <a href="https://react.dev/reference/react/useReducer">reducer</a> for
-          game logic.
+          <header data-tooltip="2026">spelling zine</header> randomly generated
+          printable zine for kids learning to read (danish only).
           <footer>
-            <a href="#" onClick={() => setV(2)}>
-              visit
-            </a>
+            <a href="https://iå.dk/5">visit</a>
           </footer>
         </article>
+
         <article>
-          <header data-tooltip="2026">magic pico</header>a magic garden demake,
-          using <a href="https://picocss.com">pico</a> styling and a single{" "}
-          <a href="https://react.dev/reference/react/useReducer">reducer</a> for
-          game logic.
+          <header data-tooltip="2026">math zine</header> randomly generated
+          printable zine for kids learning math.
           <footer>
-            <a href="#" onClick={() => setV(1)}>
-              visit
-            </a>
+            <a href="https://iå.dk/4">visit</a>
           </footer>
         </article>
 
