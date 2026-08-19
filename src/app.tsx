@@ -25,7 +25,7 @@ export function App() {
       {showHeaderFooter && (
         <footer>
           <small>
-            built with <a href="https://picocss.com">pico</a> • get in touch
+            built with <a href="https://picocss.com">pico</a> • get in touch{" "}
             <a href="mailto:m@moy.dk">m@moy.dk</a>
           </small>
         </footer>
