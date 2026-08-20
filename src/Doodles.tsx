@@ -6,7 +6,8 @@ export default function Doodles() {
           <header data-tooltip="2026">spelling zine</header> randomly generated
           printable zine for kids learning to read (danish only).
           <footer>
-            <a href="https://iå.dk/5">visit</a>
+            <a href="https://iå.dk/5">visit</a> -{" "}
+            <a href="https://moy.dk/zine-fold.jpg">?</a>
           </footer>
         </article>
 
@@ -14,7 +15,8 @@ export default function Doodles() {
           <header data-tooltip="2026">math zine</header> randomly generated
           printable zine for kids learning math.
           <footer>
-            <a href="https://iå.dk/4">visit</a>
+            <a href="https://iå.dk/4">visit</a> -{" "}
+            <a href="https://moy.dk/zine-fold.jpg">?</a>
           </footer>
         </article>
 
